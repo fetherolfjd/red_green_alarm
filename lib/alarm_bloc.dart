@@ -20,6 +20,8 @@ class AlarmBloc {
 
   final StreamController<AlarmUpdate> _alarmUpdateController = StreamController<AlarmUpdate>();
 
+  final BehaviorSubject<DateTime> _alarmTime = BehaviorSubject<DateTime>(seedValue: null);
+
   final StreamController<TimeUpdate> _timeUpdateController = StreamController<TimeUpdate>();
 
   final BehaviorSubject<bool> _alarmOn = BehaviorSubject<bool>(seedValue: false);
@@ -27,7 +29,8 @@ class AlarmBloc {
   AlarmBloc() {
     _alarmUpdateController.stream.listen((alarmUpdate) {
       _alarm.alarmTime = alarmUpdate.alarmTime;
-      if (DateTime.now().isBefore(_alarm.alarmTime)) {
+      _alarmTime.add(alarmUpdate.alarmTime);
+      if (_alarm.alarmTime == null || DateTime.now().isBefore(_alarm.alarmTime)) {
         _alarmOn.add((false));
       }
     });
@@ -46,8 +49,11 @@ class AlarmBloc {
 
   Stream<bool> get alarmOn => _alarmOn.stream;
 
+  Stream<DateTime> get alarmTime => _alarmTime.stream;
+
   void dispose() {
     _alarmOn.close();
+    _alarmTime.close();
     _alarmUpdateController.close();
     _timeUpdateController.close();
   }
