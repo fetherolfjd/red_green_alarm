@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:screen/screen.dart';
 
-import './alarm_provider.dart';
-import './alarm_time_page.dart';
-import './red_green_homepage.dart';
+import 'src/bloc_provider.dart';
+import 'src/alarm_time_page.dart';
+import 'src/red_green_homepage.dart';
 
 void main() => runApp(RedGreenApp());
 
@@ -15,7 +15,7 @@ class RedGreenApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AlarmProvider(
+    return BlocProvider(
       child: MaterialApp(
         home: RedGreenHomepage(),
         routes: <String, WidgetBuilder>{
