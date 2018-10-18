@@ -15,7 +15,7 @@ class RedGreenApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
+    return BlocHolder(
       child: MaterialApp(
         home: RedGreenHomepage(),
         routes: <String, WidgetBuilder>{
