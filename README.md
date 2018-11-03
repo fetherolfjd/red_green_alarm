@@ -1,4 +1,4 @@
-# Red Green Alarm
+# Red Green Alarm [![Build Status](https://travis-ci.org/fetherolfjd/red_green_alarm.svg?branch=master)](https://travis-ci.org/fetherolfjd/red_green_alarm)
 
 ## What Is It?
 
