@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'bloc_provider.dart';
-import 'hour_minute_text.dart';
+import 'color_text.dart';
 
 class Clock extends StatelessWidget {
   @override

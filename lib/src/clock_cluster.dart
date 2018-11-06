@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'clock.dart';
 import 'alarm_time_page.dart';
-import 'hour_minute_text.dart';
+import 'color_text.dart';
 import 'bloc_provider.dart';
 import 'alarm_bloc.dart';
 
